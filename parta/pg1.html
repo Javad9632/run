@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>PG1 Part A</title>
+</head>
+<body>
+	<div>
+		import java.io.*;
+
+class Divide {
+    public static void main(String args[]) {
+        int i, sum = 0;
+        System.out.println("The Numbers between 100 and 200 that are divisible by 7 are:");
+
+        for (i = 101; i < 200; i++) {
+            if (i % 7 == 0) {
+                System.out.println(i);
+                sum += i;
+            }
+        }
+
+        System.out.println("The Sum of Numbers divisible by 7 is: " + sum);
+    }
+}
+	</div>
+</body>
+</html>

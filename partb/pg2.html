@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Part B 2</title>
+</head>
+<body>
+		<div>
+		import java.util.*;
+
+class Student {
+    int regno, i, total = 0;
+    int mark[] = new int[3];
+    String name;
+
+    Student (int reg, String nam, int m[]) {
+        this.regno = reg;
+        this.name = nam;
+
+        for (i = 0; i < 3; i++) {
+            this.mark[i] = m[i];
+            if (m[i] < 35) {
+                this.total = 0;
+                break;
+            }
+            else
+            this.total += m[i];
+        }
+    }
+
+    public void display() {
+        System.out.println("Rengno: " + this.regno + "\tName: " + this.name + "\tTotal: " + this.total + "\n");
+    }
+}
+
+public class StudentApplication {
+    public static void main(String args[]) {
+        int score[] = new int[3];
+        Scanner ob = new Scanner(System.in);
+
+        try {
+            System.out.print("Enter no. of students: ");
+            int n = ob.nextInt();
+            Student s[] = new Student[n];    // creating array of objects
+
+            for (int i = 0; i < n; i++) {
+                System.out.println("Enter details of student" + (i + 1) + ":");
+                System.out.print("Enter register number: ");
+                int no = ob.nextInt();
+                System.out.print("Enter name: ");
+                String name = ob.next();
+                System.out.println("Enter marks in 3 subjects:");
+                for (int j = 0; j < 3; j++) {
+                    score[j] = ob.nextInt();
+                }
+
+                s[i] = new Student(no, name, score); // calling constructor for each object separately
+            }
+
+            System.out.println("\nStudent Details:");
+
+            for (int i = 0; i < n; i++) {
+                System.out.println("Student" + (i + 1) + ":");
+                s[i].display();
+            }
+        } catch (Exception e) {
+            System.out.println("Some error occured");
+        }
+
+        ob.close();  // closing the scanner object to avoid leakage
+    }
+}
+</div>
+</body>
+</html>

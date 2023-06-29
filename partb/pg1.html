@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>part B 1</title>
+</head>
+<body>
+	<div>
+import java.util.*;
+
+class CalcOperations {
+    private int n1, n2;
+
+    CalcOperations(int a, int b) {
+        n1 = a;
+        n2 = b;
+    }
+
+    public int sum() {
+        return (n1 + n2);
+    }
+
+    public int difference() {
+        return (n1 - n2);
+    }
+
+    public int product() {
+        return (n1 * n2);
+    }
+
+    public int quotient() {
+        return (n1 / n2);
+    }
+}
+
+public class Calculator {
+    public static void main(String args[]) {
+        Scanner ob = new Scanner(System.in);
+        int a, b, ch;
+
+        System.out.print("Enter first number: ");
+        a = ob.nextInt();
+
+        System.out.print("Enter second number: ");
+        b = ob.nextInt();
+
+        CalcOperations co = new CalcOperations(a, b);
+
+        try {
+            while (true) {
+                System.out.println("Menu Operation:\n1. Add\n2. Subract\n3. Multiply\n4. Divide\n5. Exit\nEnter your choice: ");
+                ch = ob.nextInt();
+
+                switch (ch) {
+                    case 1: System.out.println("The sum = " + co.sum());
+                            break;
+
+                    case 2: System.out.println("The difference = " + co.difference());
+                            break;
+
+                    case 3: System.out.println("The product = " + co.product());
+                            break;
+
+                    case 4: System.out.println("The quotient = " + co.quotient());
+                            break;
+
+                    case 5: System.exit(0);
+
+                    default: System.out.println("Invalid choice. Try again");
+                }
+            }
+        } catch (Exception e) {}
+
+        ob.close();
+    }
+}
+	</div>
+</body>
+</html>

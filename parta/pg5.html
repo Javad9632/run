@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PG5</title>
+</head>
+<body>
+<div>
+import java.io.*;
+
+class Extract {
+    public static void main(String args[]) {
+        String str;
+        int i, n, m;
+        
+        try {
+            DataInputStream b = new DataInputStream(System.in);
+            System.out.println("Enter a string:");
+            str = b.readLine();
+            
+            System.out.println("Enter the position from where the string is to be extracted:");
+            n = Integer.parseInt(b.readLine());
+            
+            System.out.println("Enter the number of characters to be extracted:");
+            m = Integer.parseInt(b.readLine());
+            
+            System.out.println("The extracted string is:");
+            for (i = n - 1; i < (n + m - 1); i++) {
+                System.out.print(str.charAt(i));
+            }
+            System.out.println();
+        } catch (Exception e) {}
+    }
+}
+    
+</div>
+</body>
+</html>
