@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <pre>
+      <code>
+    import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+/* Intead of the above 3 import statements, 
+we can use java.io.*; */
+
+public class FileCopy {
+    public static void main(String args[]) {
+        String sourceFile = "source.txt"; /* write the file name if its in the same folder as 
+the java file, or else give the path of that file */
+        String destinationFile = "destination.txt"; //same as above
+
+        try {
+            FileReader reader = new FileReader(sourceFile);
+            FileWriter writer = new FileWriter(destinationFile);
+
+            int character;
+
+            while ((character = reader.read()) != -1) {
+                writer.write(character);
+            }
+
+            reader.close();
+            writer.close();
+
+            System.out.println("File copied successfully");
+        } catch (IOException e) {
+            System.out.println("An error occured:\n" + e.getMessage());
+        }
+    }
+} 
+    </code>
+  </pre>
+  </body>
+</html>
